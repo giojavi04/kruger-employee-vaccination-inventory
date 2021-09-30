@@ -1,8 +1,8 @@
 {
-  "name": "back",
+  "name": "kruger-employee-vaccination-inventory-back",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Kruger Corporation requiere una aplicación para llevar un registro del inventario del estado de vacunación de los empleados.",
+  "author": "Javier Montalvo",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -24,11 +24,13 @@
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/swagger": "^5.1.0",
     "@nestjs/typeorm": "^8.0.2",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
+    "swagger-ui-express": "^4.1.6",
     "typeorm": "^0.2.37"
   },
   "devDependencies": {
