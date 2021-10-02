@@ -3,18 +3,23 @@ import { UsersService } from './users.service';
 import { User } from './user.entity';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { Public } from '../auth/decorators/public.decorator';
+import { Roles } from '../auth/decorators/roles.decorator';
+import { Role } from '../auth/models/roles.model';
+import { RolesGuard } from '../auth/guards/roles.guard';
 
 @Controller('users')
-@UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard, RolesGuard)
 export class UsersController {
   constructor(private readonly userService: UsersService) { }
 
   @Get()
+  @Roles(Role.ADMIN)
   async all() {
     return this.userService.getAll();
   }
 
   @Post('create')
+  @Roles(Role.ADMIN)
   async create(@Body() createUser: User) {
     const find = await this.userService.findOne(createUser.identification);
 
