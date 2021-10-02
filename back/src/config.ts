@@ -10,5 +10,6 @@ export const config = () => ({
     synchronize: true,
     logging: false,
     entities: ['dist/**/*.entity{.ts,.js}'],
-  }
+  },
+  jwtSecret: process.env.JWT_SECRET,
 });
