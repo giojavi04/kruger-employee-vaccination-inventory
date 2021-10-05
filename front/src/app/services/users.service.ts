@@ -17,7 +17,19 @@ export class UsersService {
     this.headers = `Bearer ${this.cookieService.get('token')}`;
   }
 
-  getUsers(): Observable<User | any>  {
+  getAll(): Observable<User | any>  {
     return this.http.get(this.baseUrl, { headers: { Authorization: this.headers } });
+  }
+
+  create(user: User): Observable<User | any> {
+    return this.http.post(`${this.baseUrl}/create`, user, { headers: { Authorization: this.headers } });
+  }
+
+  update(user: User, id: number): Observable<User | any> {
+    return this.http.patch(`${this.baseUrl}/update/${id}`, user, { headers: { Authorization: this.headers } });
+  }
+
+  delete(id: number): Observable<unknown> {
+    return this.http.delete(`${this.baseUrl}/delete/${id}`, { headers: { Authorization: this.headers } });
   }
 }
