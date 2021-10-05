@@ -9,8 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { MaterialModule } from '../../material/material.module';
 import { DialogDeleteComponent } from './users/dialog-delete/dialog-delete.component';
 import { ViewComponent } from './users/view/view.component';
-import { FormComponent } from './users/form/form.component';
-
+import { CreateComponent } from './users/create/create.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,7 @@ import { FormComponent } from './users/form/form.component';
     UsersComponent,
     DialogDeleteComponent,
     ViewComponent,
-    FormComponent,
+    CreateComponent,
   ],
   imports: [
     CommonModule,

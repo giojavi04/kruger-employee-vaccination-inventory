@@ -11,6 +11,6 @@ export interface User {
   vaccine?: string | null;
   vaccineDate?: string | null;
   vaccineTimes?: number | null;
-  isAdmin: boolean;
+  isAdmin?: boolean;
   createdAt?: string;
 }

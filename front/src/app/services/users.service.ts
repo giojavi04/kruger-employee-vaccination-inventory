@@ -29,7 +29,7 @@ export class UsersService {
     return this.http.post(`${this.baseUrl}/create`, user, { headers: { Authorization: this.headers } });
   }
 
-  update(user: User, id: number): Observable<User | any> {
+  update(id: number, user: User): Observable<User | any> {
     return this.http.patch(`${this.baseUrl}/update/${id}`, user, { headers: { Authorization: this.headers } });
   }
 

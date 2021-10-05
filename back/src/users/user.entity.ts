@@ -30,7 +30,7 @@ export class User {
 
   @Column({ nullable: true })
   @IsDate()
-  birthDate?: Date;
+  birthDate?: string;
 
   @Column({ nullable: true })
   direction?: string;
@@ -47,11 +47,11 @@ export class User {
 
   @Column({ nullable: true })
   @IsDate()
-  vaccineDate?: Date;
+  vaccineDate?: string;
 
   @Column({ nullable: true })
   @IsInt()
-  vaccineTimes?: number;
+  vaccineTimes?: string;
 
   @Column({ default: false })
   @IsBoolean()

@@ -1,6 +1,8 @@
 <div class="container">
   <mat-toolbar>
     <span>Usuarios</span>
+    <span class="spacer"></span>
+    <button mat-button color="primary" [routerLink]="['/dashboard/usuarios/crear']">Crear usuario</button>
   </mat-toolbar>
 
   <mat-form-field appearance="standard">
@@ -49,7 +51,7 @@
           </button>
           <mat-menu #menu="matMenu">
             <button mat-menu-item [routerLink]="['/dashboard/usuarios/', element.id]">Ver</button>
-            <button mat-menu-item>Editar</button>
+            <button mat-menu-item [routerLink]="['/dashboard/usuarios/actualizar', element.id]">Editar</button>
             <button mat-menu-item (click)="deleteDialog(element.id, element.firstName)">Eliminar</button>
           </mat-menu>
         </td>
