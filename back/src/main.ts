@@ -4,6 +4,7 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   const config = new DocumentBuilder()
     .setTitle('Employee vaccination inventory')
     .setDescription('Kruger Corporation requiere una aplicación para llevar un registro del inventario del estado de vacunación de los empleados.')

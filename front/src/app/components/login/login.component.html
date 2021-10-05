@@ -1,0 +1,26 @@
+<div class="wrap-login">
+  <div class="login">
+    <mat-spinner *ngIf="formSubmitAttempt" diameter="50" class="login-spinner"></mat-spinner>
+    <form *ngIf="!formSubmitAttempt" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2 class="h3 fw-normal">Ingresar</h2>
+      <mat-error *ngIf="loginInvalid" class="login-error">
+        El usuario o contraseña son incorrectos
+      </mat-error>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" required>
+        <mat-error>
+          Por favor ingrese un usuario correcto
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="password" required>
+        <mat-error>
+          Por favor ingrese una contraseña correcta
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="full-width" [disabled]='form.invalid'>Login</button>
+    </form>
+  </div>
+</div>
