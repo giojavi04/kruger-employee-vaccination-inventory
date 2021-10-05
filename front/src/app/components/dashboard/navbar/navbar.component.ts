@@ -17,10 +17,6 @@ export class NavbarComponent implements OnInit {
     this.isAdmin = JSON.parse(user)?.isAdmin;
   }
 
-  changeRoute(route: string) {
-    this.router.navigate([`/${route}`])
-  }
-
   async logout() {
     await this.authService.logout();
     this.router.navigate(['/login']);

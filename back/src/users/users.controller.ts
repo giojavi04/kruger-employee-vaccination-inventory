@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User } from './user.entity';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
@@ -32,6 +32,12 @@ export class UsersController {
   @Patch('update/:id')
   async update(@Param('id') id: string, @Body() updateUser: User) {
     return this.userService.update(+id, updateUser);
+  }
+
+  @Delete('delete/:id')
+  @Roles(Role.ADMIN)
+  async delete(@Param('id') id: string) {
+    return this.userService.delete(+id);
   }
 
   @Public()
