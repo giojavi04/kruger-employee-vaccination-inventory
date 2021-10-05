@@ -4,6 +4,9 @@
   </mat-toolbar>
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+    <mat-error *ngIf="sendInvalid" class="login-error">
+      Hubo un problema al enviar la información.
+    </mat-error>
     <mat-grid-list cols=" 2" rowHeight="72px" gutterSize="20px">
       <mat-grid-tile class="view-user">
         <mat-form-field class="full-width" appearance="fill">
@@ -72,11 +75,6 @@
       </mat-grid-tile>
       <mat-grid-tile class="view-user">
         <mat-slide-toggle color="primary" formControlName="isVaccine">Estado de vacunación</mat-slide-toggle>
-        <!-- <mat-form-field class="full-width" appearance="fill">
-          <mat-error>
-            Por favor ingrese un estado de vacunación válido
-          </mat-error>
-        </mat-form-field> -->
       </mat-grid-tile>
       <mat-grid-tile *ngIf="f.isVaccine.value" class="view-user">
         <mat-form-field class="full-width" appearance="fill">

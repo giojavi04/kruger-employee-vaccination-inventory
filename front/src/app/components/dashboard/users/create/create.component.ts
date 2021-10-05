@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 import { UsersService } from '../../../../services/users.service';
 import { User } from '../../../../interfaces/user';
 
@@ -13,10 +18,12 @@ export class CreateComponent implements OnInit {
   user: User | null | undefined;
   isNew: boolean = false;
   form: FormGroup;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   public sendInvalid = false;
   public formSubmitAttempt = false;
 
-  constructor(public route: ActivatedRoute, private usersService: UsersService, private fb: FormBuilder, private router: Router) {
+  constructor(public route: ActivatedRoute, private usersService: UsersService, private fb: FormBuilder, private router: Router, private _snackBar: MatSnackBar) {
     this.form = this.fb.group({
       firstName: ['', Validators.pattern("[a-zA-Z ]*")],
       lastName: ['', Validators.pattern("[a-zA-Z ]*")],
@@ -78,12 +85,22 @@ export class CreateComponent implements OnInit {
         }
         if (this.isNew) {
           await this.usersService.create(userPayload).subscribe(data => {
+            this._snackBar.open('Usuario creado con éxito!', 'Cerrar', {
+              horizontalPosition: this.horizontalPosition,
+              verticalPosition: this.verticalPosition,
+              duration: 5000,
+            });
             this.router.navigate(['dashboard/usuarios']);
           }, error => {
             this.sendInvalid = true;
           });
         } else {
           await this.usersService.update(parseInt(this.route.snapshot.params.idUser), userPayload).subscribe(data => {
+            this._snackBar.open('Usuario actualizado con éxito!', 'Cerrar', {
+              horizontalPosition: this.horizontalPosition,
+              verticalPosition: this.verticalPosition,
+              duration: 5000,
+            });
             this.router.navigate(['dashboard']);
           }, error => {
             this.sendInvalid = true;
