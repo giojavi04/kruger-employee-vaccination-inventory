@@ -1,9 +1,12 @@
-<div class="container">
+<div *ngIf="user" class="container">
   <mat-toolbar>
     <span>{{user.firstName}} {{user.lastName}}</span>
+    <span class="spacer"></span>
+    <button *ngIf="router.snapshot.params.idUser" mat-stroked-button color="primary"
+      [routerLink]="['/dashboard/usuarios']">Atrás</button>
   </mat-toolbar>
 
-  <mat-grid-list cols="2" rowHeight="8:1">
+  <mat-grid-list cols=" 2" rowHeight="8:1">
     <mat-grid-tile class="view-user"><b>Identificación:</b> {{user.identification}}</mat-grid-tile>
     <mat-grid-tile><b>Email:</b> {{user.email}}</mat-grid-tile>
     <mat-grid-tile><b>Fecha de nacimiento:</b> {{user.birthDate}}</mat-grid-tile>

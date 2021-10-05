@@ -10,7 +10,7 @@ import { User } from '../../../../interfaces/user';
 })
 export class ViewComponent implements OnInit {
   user!: User;
-  constructor(private router: ActivatedRoute, private usersService: UsersService) { }
+  constructor(public router: ActivatedRoute, private usersService: UsersService) { }
 
   ngOnInit(): void {
     const getParam = this.router.snapshot.params.idUser;
