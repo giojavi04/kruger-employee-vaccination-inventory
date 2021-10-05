@@ -6,11 +6,10 @@ import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsersComponent } from './users/users.component';
-import { MaterialModule } from 'src/app/material/material.module';
+import { MaterialModule } from '../../material/material.module';
 import { DialogDeleteComponent } from './users/dialog-delete/dialog-delete.component';
-import { DialogEditComponent } from './users/dialog-edit/dialog-edit.component';
-import { DialogShowComponent } from './users/dialog-show/dialog-show.component';
-import { InformationComponent } from './users/information/information.component';
+import { ViewComponent } from './users/view/view.component';
+import { FormComponent } from './users/form/form.component';
 
 
 @NgModule({
@@ -20,9 +19,8 @@ import { InformationComponent } from './users/information/information.component'
     NavbarComponent,
     UsersComponent,
     DialogDeleteComponent,
-    DialogEditComponent,
-    DialogShowComponent,
-    InformationComponent,
+    ViewComponent,
+    FormComponent,
   ],
   imports: [
     CommonModule,

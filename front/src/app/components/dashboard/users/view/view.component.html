@@ -1,0 +1,18 @@
+<div class="container">
+  <mat-toolbar>
+    <span>{{user.firstName}} {{user.lastName}}</span>
+  </mat-toolbar>
+
+  <mat-grid-list cols="2" rowHeight="8:1">
+    <mat-grid-tile class="view-user"><b>Identificación:</b> {{user.identification}}</mat-grid-tile>
+    <mat-grid-tile><b>Email:</b> {{user.email}}</mat-grid-tile>
+    <mat-grid-tile><b>Fecha de nacimiento:</b> {{user.birthDate}}</mat-grid-tile>
+    <mat-grid-tile><b>Dirección:</b> {{user.direction}}</mat-grid-tile>
+    <mat-grid-tile><b>Teléfono:</b> {{user.phone}}</mat-grid-tile>
+    <mat-grid-tile><b>Estado de vacunación:</b> {{user.isVaccine ? 'Vacunado' : 'No Vacunado'}}</mat-grid-tile>
+    <mat-grid-tile><b>Vacuna:</b> {{user.vaccine}}</mat-grid-tile>
+    <mat-grid-tile><b>Fecha de vacunación:</b> {{user.vaccineDate}}</mat-grid-tile>
+    <mat-grid-tile><b>Dosis:</b> {{user.vaccineTimes}}</mat-grid-tile>
+  </mat-grid-list>
+
+</div>

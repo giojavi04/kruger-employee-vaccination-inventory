@@ -18,6 +18,11 @@ export class UsersController {
     return this.userService.getAll();
   }
 
+  @Get(':id')
+  async get(@Param('id') id: string) {
+    return this.userService.get(+id);
+  }
+
   @Post('create')
   @Roles(Role.ADMIN)
   async create(@Body() createUser: User) {

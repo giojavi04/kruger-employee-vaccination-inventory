@@ -40,6 +40,7 @@
         <td mat-cell *matCellDef="let element"> {{ element.isVaccine ? 'Vacunado' : 'No Vacunado'}} </td>
       </ng-container>
 
+      <!-- Actions Column -->
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
@@ -47,7 +48,7 @@
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>Ver</button>
+            <button mat-menu-item [routerLink]="['/dashboard/usuarios/', element.id]">Ver</button>
             <button mat-menu-item>Editar</button>
             <button mat-menu-item (click)="deleteDialog(element.id, element.firstName)">Eliminar</button>
           </mat-menu>

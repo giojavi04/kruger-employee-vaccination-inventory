@@ -21,6 +21,10 @@ export class UsersService {
     return this.http.get(this.baseUrl, { headers: { Authorization: this.headers } });
   }
 
+  get(id: number): Observable<User | any> {
+    return this.http.get(`${this.baseUrl}/${id}`, { headers: { Authorization: this.headers } });
+  }
+
   create(user: User): Observable<User | any> {
     return this.http.post(`${this.baseUrl}/create`, user, { headers: { Authorization: this.headers } });
   }
