@@ -1,0 +1,7 @@
+<mat-toolbar color="primary" class="navbar">
+  <span>Vacunación</span>
+  <span class="navbar-spacer"></span>
+  <button mat-button (click)="changeRoute('dashboard')">Home</button>
+  <button *ngIf="isAdmin" mat-button (click)="changeRoute('dashboard/usuarios')">Users</button>
+  <button mat-button (click)="logout()">Logout</button>
+</mat-toolbar>
