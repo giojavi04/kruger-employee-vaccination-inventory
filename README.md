@@ -5,3 +5,5 @@ Kruger Corporation requiere una aplicación para llevar un registro del inventar
 
 Para levantar los ambientes ir a los readme de cada carpeta [Backend](https://github.com/giojavi04/kruger-employee-vaccination-inventory/tree/main/back) y [Frontend](https://github.com/giojavi04/kruger-employee-vaccination-inventory/tree/main/front).
 
+NOTA: Al crear un usuario las credenciales de ingreso tanto del username como para el password es la identificación(cédula).
+
